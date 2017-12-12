@@ -9,12 +9,12 @@ int main(){
 	file = fopen("data_1.txt", "r");
 
 	while ((a[i] = fgetc (file)) != EOF) {
-		if (a[i] == '\n') {
-			a[i] = '\0';
-			printf("%s\n",a);
-			i = 0;
-		}
-		else i++;
+	if (a[i] == '\n') {
+	a[i] = '\0';
+	printf("%s\n",a);
+	i = 0;
+	}
+	else i++;
 	}
 	a[i] = '\0';
 	printf("%s\n",a);
