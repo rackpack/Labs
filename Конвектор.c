@@ -22,7 +22,7 @@ int main (int argc, char *argv[2])
 	{
 		case 'C':
 		case 'c':
-			if(*argv[1]==-273.15)
+			if(*argv[1]>=-273.15)
 			{printf ("Абсолютный ноль");
 			 break;
 			}
@@ -34,7 +34,7 @@ int main (int argc, char *argv[2])
 
 		case 'F':
 		case 'f':
-			if(((5.0/9.0) * (temp - 32.0))==-273.15)
+			if(((5.0/9.0) * (temp - 32.0))>=-273.15)
 			{printf ("Абсолютный ноль");
 			 break;
 			}
@@ -47,7 +47,7 @@ int main (int argc, char *argv[2])
 
 		case 'K':
 		case 'k':
-			if((temp - 273.15)==-273.15)
+			if((temp - 273.15)>=-273.15)
 			{printf ("Абсолютный ноль");
 			 break;
 			}
@@ -58,7 +58,7 @@ int main (int argc, char *argv[2])
 			printf ("%.2f C\n%.2f F",C, F);
 			break;}
 		default:
-			if ( (*argv[1]==-273,15)&&((5.0/9.0) * ((temp - 32.0)==-273.15)&&(temp - 273.15)==(-273.15)))
+			if ( (*argv[1]>=-273,15)&&((5.0/9.0) * ((temp - 32.0)>=-273.15)&&(temp - 273.15)>=(-273.15)))
 			    {
 				    printf ("Абсолютный Ноль");
 				    break;
