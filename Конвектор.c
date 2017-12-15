@@ -1,83 +1,76 @@
-#include "stdio.h"
-#include "stdlib.h"
+#include <stdio.h>
 
-int main (int argc, char *argv[2])
-{
-	float temp;
-	float F, K, C;
-	char sys;
-	switch (argc)
-	{
-		case 2:
-			temp = atoi (argv [1]);
-			sys = 'X';
-			break;
-
-		case 3:
-			temp = atoi (argv [1]);
-			sys = *argv [2];
-			break;
-	}
-	switch (sys)
-	{
-		case 'C':
-		case 'c':
-			if(*argv[1]>=-273.15)
-			{printf ("Абсолютный ноль");
-			 break;
-			}
-			else{
-			F = temp * 1.8 + 32.0;
-			K = temp + 273.15;
-			printf ("%.2f F\n%.2f K",F, K);
-			break;}
-
-		case 'F':
-		case 'f':
-			if(((5.0/9.0) * (temp - 32.0))>=-273.15)
-			{printf ("Абсолютный ноль");
-			 break;
-			}
-			else
-			{
-			C = (5.0/9.0) * (temp - 32.0);
-			K = (5.0/9.0) * (temp - 32.0) + 273.15;
-			printf ("%.2f C\n%.2f K",C, K);
-			break;}
-
-		case 'K':
-		case 'k':
-			if((temp - 273.15)>=-273.15)
-			{printf ("Абсолютный ноль");
-			 break;
-			}
-			else
-			{
-			C = temp - 273.15;
-			F = 9.0 * (temp - 273.15)/5.0 + 32.0;
-			printf ("%.2f C\n%.2f F",C, F);
-			break;}
-		default:
-			if ( (*argv[1]>=-273,15)&&((5.0/9.0) * ((temp - 32.0)>=-273.15)&&(temp - 273.15)>=(-273.15)))
-			    {
-				    printf ("Абсолютный Ноль");
-				    break;
-			    }
-			    else
-			    {
-			F = temp * 1.8 + 32.0;
-			K = temp + 273.15;
-			printf ("%.2f C: \n%.2f F\n%.2f K\n\n",temp, F, K);
-
-			C = (5.0/9.0) * (temp - 32.0);
-			K = (5.0/9.0) * (temp - 32.0) + 273.15;
-			printf ("%.2f F: \n%.2f C\n%.2f K\n\n",temp, C, K);
-
-			C = temp - 273.15;
-			F = 9.0 * (temp - 273.15)/5.0 + 32.0;
-			printf ("%.2f K: \n%.2f C\n%.2f F\n\n",temp, C, F);
-			break;}
-	}
-	return 0;
+int main(int argc, const char * argv[]) {
+  
+    float t;
+    char system;
+    sscanf(argv[1], "%f", &t);
+    sscanf(argv[2], "%c", &system);
+    switch (system) {
+        case 'C': //Если выбран Цельсий
+            if (t > -273.15)
+        {
+            printf("C - %.2f\n", t);
+            printf("K - %.2f\n", t+273.15);
+            printf("F - %.2f\n", t*1.8 + 32);
+        }
+            else {printf("Вводимая температура ниже абсолютного нуля\n");} 
+            break;
+        case 'c': 
+            if (t > -273.15)
+        {
+            printf("C - %.2f\n", t);
+            printf("K - %.2f\n", t+273.15);
+            printf("F - %.2f\n", t*1.8 + 32);
+        }
+            else {printf("Вводимая температура ниже абсолютного нуля\n");}
+            break;
+        case 'K':
+            if (t > 0)
+        {
+            printf("C - %.2f\n", t - 273.15);
+            printf("K - %.2f\n", t);
+            printf("F - %.2f\n", 1.8*(t - 273)+32);
+        }
+            else {printf("Вводимая температура ниже абсолютного нуля\n");}
+            break;
+        case 'k':
+            if (t > 0)
+        {
+            printf("C - %.2f\n", t - 273.15);
+            printf("K - %.2f\n", t);
+            printf("F - %.2f\n", 1.8*(t - 273)+32);
+        }
+            else {printf("Вводимая температура ниже абсолютного нуля");}
+            break;
+        case 'F':
+            if (t > -459.67)
+        {
+            printf("C - %.2f\n", (t-32)*0.55);
+            printf("K - %.2f\n", ((t-32)/1.8)+273.15);
+            printf("F - %.2f\n", t);
+        }
+            else {printf("Вводимая температура ниже абсолютного нуля\n");}
+            break;
+        case 'f':
+            if (t > -459.67)
+        {
+            printf("C - %.2f\n", (t-32)*0.55);
+            printf("K - %.2f\n", ((t-32)/1.8)+273.15);
+            printf("F - %.2f\n", t);
+        }
+            else {printf("Вводимая температура ниже абсолютного нуля");}
+            break;
+        default:
+            printf("Неверный ввод - выбрана с.с. цельсий\n");
+            if (t > -273.15)
+            {
+                printf("C - %.2f\n", t);
+                printf("K - %.2f\n", t+273.15);
+                printf("F - %.2f\n", t*1.8 + 32);
+            }
+            else {printf("Вводимая температура ниже абсолютного нуля\n");}
+            break;
+    }
+    return 0;
 }
-
