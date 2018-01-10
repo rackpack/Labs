@@ -26,7 +26,7 @@ int main(int argc, const char * argv[]) {
             printf("K - %.2f\n", t+273.15);
             printf("F - %.2f\n", t*1.8 + 32);
         }
-            else {printf("A0");} 
+            else {printf("Aбсолютный 0");} 
             break;
        
         case 'K':
@@ -37,7 +37,7 @@ int main(int argc, const char * argv[]) {
             printf("C - %.2f\n", t - 273.15);
             printf("F - %.2f\n", 1.8*(t - 273)+32);
         }
-            else {printf("A0");}
+            else {printf("Aбсолютный 0");}
             break;
        
         case 'F':
@@ -48,7 +48,7 @@ int main(int argc, const char * argv[]) {
             printf("C - %.2f\n", (t-32)*0.55);
             printf("K - %.2f\n", ((t-32)/1.8)+273.15);
         }
-            else {printf("A0");}
+            else {printf("Aбсолютный 0");}
             break;
        	    
         default:
@@ -60,7 +60,7 @@ int main(int argc, const char * argv[]) {
         }
             else {
 		printf("C = ");
-		printf("A0\n");} 
+		printf("Aбсолютный 0\n");} 
 	      if (t > 0)
         {
 	    printf("K - %.2f\n", t);
@@ -69,7 +69,7 @@ int main(int argc, const char * argv[]) {
         }
             else {
 		printf("K = ");
-		printf("A0\n");}
+		printf("Aбсолютный 0\n");}
 	    if (t > -459.67 )
         {
 	    printf("F - %.2f\n", t);
@@ -78,7 +78,7 @@ int main(int argc, const char * argv[]) {
         }
             else {
 		printf("F = ");	
-		printf("A0\n");}
+		printf("Aбсолютный 0\n");}
             break;
     }
     return 0;
