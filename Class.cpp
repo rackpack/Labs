@@ -9,7 +9,7 @@ class TC
 		
 	 	void set()
 	 	{
-	 	cout << "Ââåäèòå êîë-âî ÒÖ";
+	 	cout << "Введите кол-во ТЦ";
 	 	cin >> kolvo_TC;	  
 		}
 		int getKolvo()
@@ -27,7 +27,7 @@ class Shops
    {
    	int i;
    	for (int i=1;i<kolvo_TC_ ; i++ );
-   	cout << "Ââåäèòå êîë-âî ìàãàçèíîâ";
+   	cout << "Введите кол-во магазинов";
    	cin >> kolvo_Shop[i];
 	}
 };
